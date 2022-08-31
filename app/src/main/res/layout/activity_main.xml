@@ -6,13 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/inputVoice"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="50dp"
+        android:autofillHints="username"
+        android:hint="@string/input_voice"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/voiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="@id/inputVoice"
+        app:layout_constraintStart_toStartOf="@id/inputVoice"
+        app:layout_constraintTop_toBottomOf="@id/inputVoice">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:contentDescription="@string/input_voice_image"
+                android:src="@drawable/ic_voice"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieCircle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:lottie_rawRes="@raw/circle"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/voiceButton"
+        app:layout_constraintEnd_toEndOf="@id/voiceButton"
+        app:layout_constraintTop_toTopOf="@id/voiceButton"
+        app:layout_constraintBottom_toBottomOf="@id/voiceButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
